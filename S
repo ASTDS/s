@@ -21,7 +21,6 @@ while _G.AutoFarm2 do wait()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Enemies ["Monkey [Lv. 14]"].HumanoidRootPart.CFrame * CFrame.new(0,35,0)
 end
 end
-end
 end)
  
 section1:addToggle("Fast Attack กดตอนฟาร์มไม่งั้นไม่ตี", _G.FastAttack, function(value)

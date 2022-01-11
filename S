@@ -17,6 +17,7 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Enem
 elseif mylevels == 1 or mylevels <= 9 then
 _G.AutoFarm1 = false
 end
+end
 end)
  
 section1:addToggle("Fast Attack กดตอนฟาร์มไม่งั้นไม่ตี", _G.FastAttack, function(value)

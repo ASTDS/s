@@ -1,3 +1,4 @@
+_G.Key = "Key-dsd"
 HWID = "HELLO"
  
 local Server =  syn.request({

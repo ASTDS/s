@@ -10,8 +10,8 @@ if Server == "WHITELIST !" then
 elseif Server == "Invaid HWID !" then
     game.Players.LocalPlayer:kick("Invaid HWID")
 elseif Server == "Invaid Key" then
-    game.Players.LocalPlayer:kick("Invaid Key")
+    game.Players.LocalPlayer:kick("คีย์ผิด กรุณาตรวจสอบคีย์ของคุณ")
 else
-    game.Players.LocalPlayer:kick("Invaid Key")
+    game.Players.LocalPlayer:kick("คีย์ผิด กรุณาตรวจสอบคีย์ของคุณ")
 end
 

@@ -1,7 +1,7 @@
 HWID = "HELLO"
  
 local Server =  syn.request({
-    Url = "http://127.0.0.1/Y/Server.php?Key=".. _G.Key .."&HWID="..HWID,
+    Url = "http://localhost/Y/Server.php?Key=".. _G.Key .."&HWID="..HWID,
     Method = "GET"
 }).Body
  

@@ -1,5 +1,7 @@
 local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/GreenDeno/Venyx-UI-Library/main/source.lua"))();
 local venyx = library.new("Z HUB | BF", 5013109572)
+local SpawnPoint = game.Players.LocalPlayer.SpawnPoint
+
  local mylevels = game.Players.LocalPlayer.Data.Level.Value
 local page = venyx:addPage("Test", 5012544693)
 local section1 = page:addSection("Section 1")
@@ -16,6 +18,7 @@ while _G.AutoFarm1 do wait()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Enemies ["Bandit [Lv. 5]"].HumanoidRootPart.CFrame * CFrame.new(0,35,0)
 end
 elseif mylevels == 10 or mylevels <= 29 then
+SpawnPoint.Value = "Jungle'
 _G.AutoFarm2 = true
 while _G.AutoFarm2 do wait()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Enemies ["Monkey [Lv. 14]"].HumanoidRootPart.CFrame * CFrame.new(0,35,0)

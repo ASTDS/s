@@ -1,8 +1,7 @@
-_G.Key = "Key-dsd"
 HWID = "TEST"
  
-local Server =  syn.request({
-    Url = "http://localhost/Y/Server.php?Key=".. _G.Key .."&HWID="..HWID,
+local Server =  http_request({
+    Url = "http://localhost/WHITELIST/Server.php?Key=".. _G.Key .."&HWID="..HWID,
     Method = "GET"
 }).Body
  
@@ -15,3 +14,4 @@ elseif Server == "Invaid Key" then
 else
     game.Players.LocalPlayer:kick("Invaid Key")
 end
+

@@ -1,5 +1,5 @@
 _G.Key = "Key-dsd"
-HWID = "HELLO"
+HWID = "TEST"
  
 local Server =  syn.request({
     Url = "http://localhost/Y/Server.php?Key=".. _G.Key .."&HWID="..HWID,

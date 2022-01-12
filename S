@@ -11,7 +11,7 @@ local page2 = venyx:addPage("ESP", 5012544693)
 section1:addToggle("AutoFarm", _G.AutoFarm, function(value)
 _G.AutoFarm = value
 if _G.AutoFarm then
-elseif mylevels == 1 or mylevels <= 9 then
+elseif mylevels == 0 or mylevels <= 9 then
     _G.AutoFarm1 = value
     while _G.AutoFarm1 do wait()
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Enemies ["Bandit [Lv. 5]"].HumanoidRootPart.CFrame * CFrame.new(0,35,0)

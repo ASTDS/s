@@ -6,8 +6,8 @@ local page = venyx:addPage("Main", 5012544693)
 local section1 = page:addSection("AutoFarm")
 local theme = venyx:addPage("Theme", 5012544693)
 local colors = theme:addSection("Colors")
-local page = venyx:addPage("ESP", 5012544693)
- local section2 = page:addSection("ESP")
+local page2 = venyx:addPage("ESP", 5012544693)
+ local section2 = page2:addSection("ESP")
 section1:addToggle("AutoFarm", _G.AutoFarm, function(value)
 _G.AutoFarm = value
 if _G.AutoFarm then

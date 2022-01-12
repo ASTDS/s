@@ -141,7 +141,7 @@ function UpdateDevilFruit()
 	for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
 		pcall(function()
 			if string.find(v.Name, "Fruit") then
-				if DevilESP then
+				if  _G.EspFruit then
 					if string.find(v.Name, "Fruit") then
 						if not v.Handle:FindFirstChild("DevilESP"..Number) then
 							local Bb = Instance.new("BillboardGui", v.Handle)
@@ -175,17 +175,11 @@ end
  section2:addToggle("EspFruit", _G.ESPFRUIT, function(value)
  _G.ESPFRUIT = value
  if _G.ESPFRUIT then
- _G.EspFruit = value
+ _G.EspFruit = true
  while _G.EspFruit do wait()
  UpdateDevilFruit()
  end
  end
  end)
 
-
-section2:addButton("Destroy", function()
-
-venyx:Destroy()
-
-end)
 

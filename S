@@ -172,7 +172,7 @@ function UpdateDevilFruit()
 	end
 end
 
- section1:addToggle("AutoQuest", _G.ESPFRUIT, function(value)
+ section2:addToggle("EspFruit", _G.ESPFRUIT, function(value)
  _G.ESPFRUIT = value
  if _G.ESPFRUIT then
  _G.EspFruit = value

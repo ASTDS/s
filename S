@@ -42,6 +42,8 @@ local A_2 = "BanditQuest1"
 local A_3 = 1
 local Event = game:GetService("ReplicatedStorage").Remotes["CommF_"]
 Event:InvokeServer(A_1, A_2, A_3)
+end
+end
 elseif mylevels == 10 or mylevels <= 29 then
 _G.AutoQuest1 = false
 _G.AutoQuest2 = true
@@ -52,9 +54,6 @@ local A_2 = "JungleQuest"
 local A_3 = 1
 local Event = game:GetService("ReplicatedStorage").Remotes["CommF_"]
 Event:InvokeServer(A_1, A_2, A_3)
-
-end
-end
 end
 end
 end

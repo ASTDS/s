@@ -27,7 +27,7 @@ print(time)
     while _G.AutoFarm2 do wait()
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Enemies ["Monkey [Lv. 14]"].HumanoidRootPart.CFrame * CFrame.new(0,35,0)
     end
-elseif mylevels == 15 or mylevels <= 29 then
+elseif MyLevel >= 29 then
     local CFrameEnd = CFrame.new(-1367.57507, 22.8521042, 117.870087, -0.69073534, -3.26114247e-08, -0.723107696, -3.39389601e-08, 1, -1.26794202e-08, 0.723107696, 1.57834013e-08, -0.69073534)
 local Time = math.random(5,10) --ใส่เวลาที่จะไปถึง
 local tween = game:GetService("TweenService"):Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(Time), {CFrame = CFrameEnd}) tween:Play()

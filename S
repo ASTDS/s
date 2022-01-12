@@ -13,7 +13,7 @@ if _G.AutoFarm then
 elseif mylevels == 9 or mylevels <= 30 then
     _G.AutoFarm = true
     while _G.AutoFarm1 do wait()
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Enemies ["Bandit [Lv. 5]"].HumanoidRootPart.CFrame
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0,0,0)
 end
 end
 end)

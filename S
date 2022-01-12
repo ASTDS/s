@@ -183,7 +183,7 @@ end
  end)
 
 
-section2:addButton("DestroyGui",function()
+section2:addButton("Destroy", function()
 
 venyx:Destroy()
 

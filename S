@@ -12,7 +12,7 @@ section1:addToggle("AutoFarm", _G.AutoFarm, function(value)
 _G.AutoFarm = value
 if _G.AutoFarm then
 elseif mylevels == 0 or mylevels <= 9 then
-    _G.AutoFarm1 = value
+    _G.AutoFarm1 = true
     while _G.AutoFarm1 do wait()
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Enemies ["Bandit [Lv. 5]"].HumanoidRootPart.CFrame * CFrame.new(0,35,0)
 end
@@ -20,7 +20,7 @@ elseif mylevels == 10 or mylevels <= 14 then
 local CFrameEnd = CFrame.new(-1367.57507, 22.8521042, 117.870087, -0.69073534, -3.26114247e-08, -0.723107696, -3.39389601e-08, 1, -1.26794202e-08, 0.723107696, 1.57834013e-08, -0.69073534)
 local Time = math.random(5,10) --ใส่เวลาที่จะไปถึง
 local tween = game:GetService("TweenService"):Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(Time), {CFrame = CFrameEnd}) tween:Play()
-    _G.AutoFarm2 = value
+    _G.AutoFarm2 = true
     wait(math.random(10,15))
     while _G.AutoFarm2 do wait()
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Enemies ["Monkey [Lv. 14]"].HumanoidRootPart.CFrame * CFrame.new(0,35,0)
@@ -32,7 +32,7 @@ local tween = game:GetService("TweenService"):Create(game.Players.LocalPlayer.Ch
         local time = math.random(10,15)
 wait(time)
 print(time)
-    _G.AutoFarm3 = value
+    _G.AutoFarm3 = true
     while _G.AutoFarm3 do wait()
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Enemies ["Gorilla [Lv. 20]"].HumanoidRootPart.CFrame * CFrame.new(0,35,0)
     end
@@ -43,7 +43,7 @@ end)
 _G.AutoQuest1 = value
 if _G.AutoQuest1 then
 elseif mylevels == 1 or mylevels <= 9 then
-_G.Quest = value
+_G.Quest = true
 while _G.Quest do wait()
 if game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == false then
  
@@ -55,7 +55,7 @@ Event:InvokeServer(A_1, A_2, A_3)
 end
 end
 elseif mylevels == 10 or mylevels <= 14 then
-_G.Quest2 = value
+_G.Quest2 = true
 while _G.Quest2 do wait()
 if game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == false then
 local A_1 = "StartQuest"
@@ -67,7 +67,7 @@ Event:InvokeServer(A_1, A_2, A_3)
 end
 end
 elseif mylevels == 15 or mylevels <= 29 then
-_G.Quest3 = value
+_G.Quest3 = true
 while _G.Quest3 do wait()
 if game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == false then
 local A_1 = "StartQuest"

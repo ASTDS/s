@@ -28,24 +28,6 @@ end)
 section1:addToggle("Fast Attack กดตอนฟาร์มไม่งั้นไม่ตี", _G.FastAttack, function(value)
 _G.FastAttack = value
 end)
-
-section1:addToggle("AutoQuest", _G.AutoQuest, function(value)
-_G.AutoQuest1 = value
-if _G.AutoQuest1 then
-elseif mylevels == 1 or mylevels <= 9 then
-_G.Quest  = true
-while _G.Quest do wait()
-if game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == false then
- 
-local A_1 = "StartQuest"
-local A_2 = "BanditQuest1"
-local A_3 = 1
-local Event = game:GetService("ReplicatedStorage").Remotes["CommF_"]
-Event:InvokeServer(A_1, A_2, A_3)
-end
-end
-end
-end)
  
 local themes = {
 Background = Color3.fromRGB(24, 24, 24),

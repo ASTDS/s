@@ -2,16 +2,17 @@ local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/ASTDS
 local venyx = library.new("Z Hub | BF | V.1 ", 5013109572)
 local mylevels = game:GetService("Players").LocalPlayer.Data.Level.Value
 
-local page = venyx:addPage("Test", 5012544693)
-local section1 = page:addSection("Section 1")
+local page = venyx:addPage("Main", 5012544693)
+local section1 = page:addSection("AutoFarm")
 local theme = venyx:addPage("Theme", 5012544693)
 local colors = theme:addSection("Colors")
- 
+local page = venyx:addPage("ESP", 5012544693)
+ local section2 = page:addSection("ESP")
 section1:addToggle("AutoFarm", _G.AutoFarm, function(value)
 _G.AutoFarm = value
 if _G.AutoFarm then
 elseif mylevels == 1 or mylevels <= 9 then
-    _G.AutoFarm1 = true
+    _G.AutoFarm1 = value
     while _G.AutoFarm1 do wait()
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Enemies ["Bandit [Lv. 5]"].HumanoidRootPart.CFrame * CFrame.new(0,35,0)
 end
@@ -19,7 +20,7 @@ elseif mylevels == 10 or mylevels <= 14 then
 local CFrameEnd = CFrame.new(-1367.57507, 22.8521042, 117.870087, -0.69073534, -3.26114247e-08, -0.723107696, -3.39389601e-08, 1, -1.26794202e-08, 0.723107696, 1.57834013e-08, -0.69073534)
 local Time = math.random(5,10) --ใส่เวลาที่จะไปถึง
 local tween = game:GetService("TweenService"):Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(Time), {CFrame = CFrameEnd}) tween:Play()
-    _G.AutoFarm2 = true
+    _G.AutoFarm2 = value
     wait(math.random(10,15))
     while _G.AutoFarm2 do wait()
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Enemies ["Monkey [Lv. 14]"].HumanoidRootPart.CFrame * CFrame.new(0,35,0)
@@ -31,7 +32,7 @@ local tween = game:GetService("TweenService"):Create(game.Players.LocalPlayer.Ch
         local time = math.random(10,15)
 wait(time)
 print(time)
-    _G.AutoFarm3 = true
+    _G.AutoFarm3 = value
     while _G.AutoFarm3 do wait()
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Enemies ["Gorilla [Lv. 20]"].HumanoidRootPart.CFrame * CFrame.new(0,35,0)
     end
@@ -42,7 +43,7 @@ end)
 _G.AutoQuest1 = value
 if _G.AutoQuest1 then
 elseif mylevels == 1 or mylevels <= 9 then
-_G.Quest  = true
+_G.Quest = value
 while _G.Quest do wait()
 if game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == false then
  
@@ -54,7 +55,7 @@ Event:InvokeServer(A_1, A_2, A_3)
 end
 end
 elseif mylevels == 10 or mylevels <= 14 then
-_G.Quest2 = true
+_G.Quest2 = value
 while _G.Quest2 do wait()
 if game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == false then
 local A_1 = "StartQuest"
@@ -66,7 +67,7 @@ Event:InvokeServer(A_1, A_2, A_3)
 end
 end
 elseif mylevels == 15 or mylevels <= 29 then
-_G.Quest3 = true
+_G.Quest3 = value
 while _G.Quest3 do wait()
 if game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == false then
 local A_1 = "StartQuest"
@@ -134,3 +135,50 @@ spawn(function()
     end)
 end) 
 end)
+
+
+function UpdateDevilFruit()
+	for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
+		pcall(function()
+			if string.find(v.Name, "Fruit") then
+				if DevilESP then
+					if string.find(v.Name, "Fruit") then
+						if not v.Handle:FindFirstChild("DevilESP"..Number) then
+							local Bb = Instance.new("BillboardGui", v.Handle)
+							Bb.Name = "DevilESP"..Number
+							Bb.ExtentsOffset = Vector3.new(0, 1, 0)
+							Bb.Size = UDim2.new(1, 200, 1, 30)
+							Bb.Adornee = v.Handle
+							Bb.AlwaysOnTop = true
+							local Textlb = Instance.new("TextLabel", Bb)
+							Textlb.Font = "GothamBold"
+							Textlb.FontSize = "Size14"
+							Textlb.Size = UDim2.new(1,0,1,0)
+							Textlb.BackgroundTransparency = 1
+							Textlb.TextStrokeTransparency = 0.5
+							Textlb.Text = v.Name.."\n"..math.round((v.Handle.Position - game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position).Magnitude/3).." m."
+							Textlb.TextColor3 = Color3.new(255, 255, 255)
+						else
+							v.Handle["DevilESP"..Number].TextLabel.Text = v.Name.."\n"..math.round((v.Handle.Position - game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position).Magnitude/3).." m."
+						end
+					end
+				else
+					if v.Handle:FindFirstChild("DevilESP"..Number) then
+						v.Handle:FindFirstChild("DevilESP"..Number):Destroy()
+					end
+				end
+			end
+		end)
+	end
+end
+
+ section1:addToggle("AutoQuest", _G.ESPFRUIT, function(value)
+ _G.ESPFRUIT = value
+ if _G.ESPFRUIT then
+ _G.EspFruit = value
+ while _G.EspFruit do wait()
+ UpdateDevilFruit()
+ end
+ end
+ end)
+

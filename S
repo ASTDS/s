@@ -28,7 +28,7 @@ end)
 section1:addToggle("Fast Attack กดตอนฟาร์มไม่งั้นไม่ตี", _G.FastAttack, function(value)
 _G.FastAttack = value
 end)
- 
+
 section1:addToggle("AutoQuest", _G.AutoQuest, function(value)
 _G.AutoQuest1 = value
 if _G.AutoQuest1 then

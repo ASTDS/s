@@ -86,6 +86,52 @@ end)
 section1:addToggle("Fast Attack", _G.FastAttack, function(value)
 _G.FastAttack = value
 end)
+
+function UpdateDevilFruit()
+	for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
+		pcall(function()
+			if string.find(v.Name, "Fruit") then
+				if  _G.EspFruit then
+					if string.find(v.Name, "Fruit") then
+						if not v.Handle:FindFirstChild("DevilESP"..Number) then
+							local Bb = Instance.new("BillboardGui", v.Handle)
+							Bb.Name = "DevilESP"..Number
+							Bb.ExtentsOffset = Vector3.new(0, 1, 0)
+							Bb.Size = UDim2.new(1, 200, 1, 30)
+							Bb.Adornee = v.Handle
+							Bb.AlwaysOnTop = true
+							local Textlb = Instance.new("TextLabel", Bb)
+							Textlb.Font = "GothamBold"
+							Textlb.FontSize = "Size14"
+							Textlb.Size = UDim2.new(1,0,1,0)
+							Textlb.BackgroundTransparency = 1
+							Textlb.TextStrokeTransparency = 0.5
+							Textlb.Text = v.Name.."\n"..math.round((v.Handle.Position - game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position).Magnitude/3).." m."
+							Textlb.TextColor3 = Color3.new(255, 255, 255)
+						else
+							v.Handle["DevilESP"..Number].TextLabel.Text = v.Name.."\n"..math.round((v.Handle.Position - game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position).Magnitude/3).." m."
+						end
+					end
+				else
+					if v.Handle:FindFirstChild("DevilESP"..Number) then
+						v.Handle:FindFirstChild("DevilESP"..Number):Destroy()
+					end
+				end
+			end
+		end)
+	end
+end
+
+ section2:addToggle("EspFruit", _G.ESPFRUIT, function(value)
+ _G.ESPFRUIT = value
+ if _G.ESPFRUIT then
+ _G.EspFruit = true
+ while _G.EspFruit do wait()
+ UpdateDevilFruit()
+ end
+ end
+ end)
+
  
  
 local themes = {
@@ -138,50 +184,5 @@ spawn(function()
 end) 
 end)
 
-
-function UpdateDevilFruit()
-	for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
-		pcall(function()
-			if string.find(v.Name, "Fruit") then
-				if  _G.EspFruit then
-					if string.find(v.Name, "Fruit") then
-						if not v.Handle:FindFirstChild("DevilESP"..Number) then
-							local Bb = Instance.new("BillboardGui", v.Handle)
-							Bb.Name = "DevilESP"..Number
-							Bb.ExtentsOffset = Vector3.new(0, 1, 0)
-							Bb.Size = UDim2.new(1, 200, 1, 30)
-							Bb.Adornee = v.Handle
-							Bb.AlwaysOnTop = true
-							local Textlb = Instance.new("TextLabel", Bb)
-							Textlb.Font = "GothamBold"
-							Textlb.FontSize = "Size14"
-							Textlb.Size = UDim2.new(1,0,1,0)
-							Textlb.BackgroundTransparency = 1
-							Textlb.TextStrokeTransparency = 0.5
-							Textlb.Text = v.Name.."\n"..math.round((v.Handle.Position - game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position).Magnitude/3).." m."
-							Textlb.TextColor3 = Color3.new(255, 255, 255)
-						else
-							v.Handle["DevilESP"..Number].TextLabel.Text = v.Name.."\n"..math.round((v.Handle.Position - game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position).Magnitude/3).." m."
-						end
-					end
-				else
-					if v.Handle:FindFirstChild("DevilESP"..Number) then
-						v.Handle:FindFirstChild("DevilESP"..Number):Destroy()
-					end
-				end
-			end
-		end)
-	end
-end
-
- section2:addToggle("EspFruit", _G.ESPFRUIT, function(value)
- _G.ESPFRUIT = value
- if _G.ESPFRUIT then
- _G.EspFruit = true
- while _G.EspFruit do wait()
- UpdateDevilFruit()
- end
- end
- end)
 
 

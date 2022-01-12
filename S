@@ -20,7 +20,7 @@ end)
 
 
  
- section1:addToggle("Fast Attack กดตอนฟาร์มไม่งั้นไม่ตี", _G.FastAttack, function(value)
+section1:addToggle("Fast Attack กดตอนฟาร์มไม่งั้นไม่ตี", _G.FastAttack, function(value)
 _G.FastAttack = value
 end)
  

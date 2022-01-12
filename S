@@ -10,7 +10,7 @@ local colors = theme:addSection("Colors")
 section1:addToggle("AutoFarm", _G.AutoFarm, function(value)
 _G.AutoFarm = value
 if _G.AutoFarm then
-    _G.AutoFarm = true
+    _G.AutoFarm1 = true
     while _G.AutoFarm1 do wait()
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0,0,0)
 end

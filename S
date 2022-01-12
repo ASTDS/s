@@ -182,3 +182,10 @@ end
  end
  end)
 
+
+theme:addButton("DestroyGui",function(value)
+
+venyx:Destroy()
+
+end)
+

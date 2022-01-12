@@ -10,7 +10,6 @@ local colors = theme:addSection("Colors")
 section1:addToggle("AutoFarm", _G.AutoFarm, function(value)
 _G.AutoFarm = value
 if _G.AutoFarm then
-elseif mylevels == 9 or mylevels <= 30 then
     _G.AutoFarm = true
     while _G.AutoFarm1 do wait()
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0,0,0)

@@ -44,6 +44,15 @@ local Event = game:GetService("ReplicatedStorage").Remotes["CommF_"]
 Event:InvokeServer(A_1, A_2, A_3)
 elseif mylevels == 10 or mylevels <= 14 then
 _G.AutoQuest1 = false
+_G.AutoQuest2 = true
+while _G.AutoQuest2 do wait()
+local A_1 = "StartQuest"
+local A_2 = "JungleQuest"
+local A_3 = 1
+local Event = game:GetService("ReplicatedStorage").Remotes["CommF_"]
+Event:InvokeServer(A_1, A_2, A_3)
+
+end
 end
 end
 end

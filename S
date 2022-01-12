@@ -7,8 +7,46 @@ local section1 = page:addSection("AutoFarm")
 local theme = venyx:addPage("Theme", 5012544693)
 local colors = theme:addSection("Colors")
  
+ section1:addToggle("AutoFarm ตอนปิดให้รีเซ็ตแล้วรอสักพัก", _G.AutoFarm, function(value)
+_G.AutoFarm = value
+if _G.AutoFarm then
+_G.AutoFarm1 = true
+elseif mylevels == 1 or mylevels <= 9 then
+while _G.AutoFarm1 do wait()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Enemies ["Bandit [Lv. 5]"].HumanoidRootPart.CFrame * CFrame.new(0,35,0)
+end
+
+elseif mylevels == 10 or mylevels <= 29 then
+_G.AutoFarm1 = false
+_G.AutoFarm2 = true
+while _G.AutoFarm2 do wait()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Enemies ["Monkey [Lv. 14]"].HumanoidRootPart.CFrame * CFrame.new(0,35,0)
+end
+end
+end)
  
+ section1:addToggle("AutoQuest", _G.AutoQuest, function(value)
+_G.AutoQuest1 = value
+if _G.AutoQuest1 then
+elseif mylevels == 1 or mylevels <= 9 then
+_G.Quest  = true
+while _G.Quest do wait()
+if game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == false then
  
+local A_1 = "StartQuest"
+local A_2 = "BanditQuest1"
+local A_3 = 1
+local Event = game:GetService("ReplicatedStorage").Remotes["CommF_"]
+Event:InvokeServer(A_1, A_2, A_3)
+end
+end
+end
+end)
+
+ 
+ section1:addToggle("Fast Attack กดตอนฟาร์มไม่งั้นไม่ตี", _G.FastAttack, function(value)
+_G.FastAttack = value
+end)
  
 local themes = {
 Background = Color3.fromRGB(24, 24, 24),

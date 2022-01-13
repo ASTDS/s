@@ -415,7 +415,7 @@ function CheckQuest()
 													end
 													game:GetService'VirtualUser':CaptureController()
 													game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
-													game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame * CFrame.new(0, 55, 0)
+													game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame * CFrame.new(0, 48, 0)
 													if HideHitBlox then
 														v.HumanoidRootPart.Transparency = 1
 													else

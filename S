@@ -6,6 +6,8 @@ local page = venyx:addPage("Main", 5012544693)
 local S9s0 = page:addSection("AutoFarm")
 local page2 = venyx:addPage("ESP", 5012544693)
  local section2 = page2:addSection("ESP")
+ local BuyItem = venyx:addPage("BuyItem", 7294901968)
+ local Buy = BuyItem:addSection("Buy")
 local theme = venyx:addPage("Theme", 5012544693)
 local colors = theme:addSection("Colors")
 
@@ -611,4 +613,13 @@ end
  end
  end
  end)
+
+Buy:addButton("BlackLeg",function()
+
+local A_1 = "BuyBlackLeg"
+local Event = game:GetService("ReplicatedStorage").Remotes["CommF_"]
+Event:InvokeServer(A_1)
+
+
+end)
 

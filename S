@@ -1,15 +1,13 @@
 local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/ASTDS/s/main/GUI"))()
-local venyx = library.new("Z Hub | BF | V.1 ", 5013109572)
+local venyx = library.new("Soul Hub | BF | V.1 ", 5013109572)
 local mylevels = game:GetService("Players").LocalPlayer.Data.Level.Value
 
 local page = venyx:addPage("Main", 5012544693)
 local S9s0 = page:addSection("AutoFarm")
-local page2 = venyx:addPage("ESP", 5012544693)
- local section2 = page2:addSection("ESP")
  local BuyItem = venyx:addPage("BuyItem", 7294901968)
  local Buy = BuyItem:addSection("Buy")
 local theme = venyx:addPage("Theme", 5012544693)
-local colors = theme:addSection("Colors")
+local colors = theme:addSection("misc")
 
 		S9s0:addToggle("Auto Farm",false,function(vu)
 			if SelectToolWeapon == "" and vu then
@@ -604,7 +602,7 @@ function UpdateDevilFruit()
 	end
 end
 
- section2:addToggle("EspFruit", _G.ESPFRUIT, function(value)
+ colors:addToggle("EspFruit", _G.ESPFRUIT, function(value)
  _G.ESPFRUIT = value
  if _G.ESPFRUIT then
  _G.EspFruit = true
@@ -623,3 +621,10 @@ Event:InvokeServer(A_1)
 
 end)
 
+
+
+		colors:addKeybind("Hide UI", Enum.KeyCode.RightControl, function()
+			venyx:toggle()
+		end, function()
+
+		end)

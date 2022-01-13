@@ -379,7 +379,7 @@ function CheckQuest()
 			end
 		end)
 
-
+                local time = math.random(15,20)
 		local LocalPlayer = game:GetService("Players").LocalPlayer
 		local VirtualUser = game:GetService('VirtualUser')
 		function autofarm()
@@ -387,6 +387,9 @@ function CheckQuest()
 				if LocalPlayer.PlayerGui.Main.Quest.Visible == false then
 					StatrMagnet = false
 					CheckQuest()
+					local Time = 15 --ใส่เวลาที่จะไปถึง
+                                        local tween = game:GetService("TweenService"):Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(Time), {CFrame = CFrameQuest}) tween:Play()
+					wait(Time)
 					print()
 					LocalPlayer.Character.HumanoidRootPart.CFrame = CFrameQuest
 					wait(1.1)
